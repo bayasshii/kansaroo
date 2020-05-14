@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import TaskList from './taskList.jsx'
-
-const TabsWrap = styled.div`
-`
 
 class TasksTabs extends Component {
   render() {

@@ -6,9 +6,9 @@ import Footer from './footer.jsx'
 import Tasks from './tasks/tasks.jsx'
 import Snapshot from './snapshot/snapshot.jsx'
 
-const HeaderWrap = styled.div`
-  background-color: #D6EDF2;
-  padding: 20px;
+const Wrap = styled.div`
+  height: 100vh;
+  position: relative;
 `
 
 class App extends Component {
@@ -28,16 +28,16 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Wrap>
         <Header
           title={this.state.screenType}
         />
-        {this.state.screenType == "Tasks" && <Tasks/>}
-        {this.state.screenType == "Snapshot" && <Snapshot/>}
+        {this.state.screenType === "Tasks" && <Tasks/>}
+        {this.state.screenType === "Snapshot" && <Snapshot/>}
         <Footer
           setParentState={(name)=>this.setParentState(name)}
         />
-      </React.Fragment>
+      </Wrap>
     );
   }
 }

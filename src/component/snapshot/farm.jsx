@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-
-const SnapshotWrap = styled.div`
-
-`
 
 const AnaWrap = styled.div`
   border-bottom: 1px solid #BEBEBE;
@@ -17,7 +12,7 @@ const AnaItem = styled.div`
 
 const CrapsWrap = styled.div`
 `
-const CrapsItem = styled.a`
+const CrapsItem = styled.div`
   display: flex;
   border-bottom: 1px solid #BEBEBE;
 `
@@ -34,20 +29,6 @@ const CrapsItemTextDest = styled.div`
 `
 
 class Farm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      farmType: "Uji"
-    };
-  }
-
-  // state制御する用
-  setStateFarmType(name) {
-    this.setState({
-      farmType: name
-    });
-  }
-
   render() {
     const craps = this.props.craps
     return (
@@ -60,7 +41,7 @@ class Farm extends Component {
 
         <CrapsWrap>
           {craps.map((crap) => (
-            <CrapsItem href="./cabbage">
+            <CrapsItem onClick={()=>this.props.setStateScreen(crap.name)}>
               <CrapsItemImg/>
               <CrapsItemText>
                 <CrapsItemTextTitle>{crap.name}</CrapsItemTextTitle>

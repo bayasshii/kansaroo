@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const FooterWrap = styled.div`
-  display: absolute;
+  position: absolute;
   bottom: 0;
 `
 

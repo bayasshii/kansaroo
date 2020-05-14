@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Tasks from './tasks/tasks.jsx'
-
-const TabsWrap = styled.div`
-`
 
 const FooterWrap = styled.div`
   display: absolute;
@@ -24,8 +20,8 @@ class Footer extends Component {
       <React.Fragment>
         <FooterWrap>
           <FooterTabs>
-            <FooterTab onClick={()=>this.props.setParentState("tasks")}>Tasks</FooterTab>
-            <FooterTab onClick={()=>this.props.setParentState("snapshot")}>Snapshot</FooterTab>
+            <FooterTab onClick={()=>this.props.setParentState("Tasks")}>Tasks</FooterTab>
+            <FooterTab onClick={()=>this.props.setParentState("Snapshot")}>Snapshot</FooterTab>
           </FooterTabs>
         </FooterWrap>
       </React.Fragment>

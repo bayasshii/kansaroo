@@ -14,7 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      screenType: "tasks"
+      screenType: "Tasks"
     };
   }
 
@@ -29,10 +29,10 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header
-          title='Tasks'
+          title={this.state.screenType}
         />
-        <Tasks/>
-        {this.state.screenType}
+        {this.state.screenType == "Tasks" && <Tasks/>}
+        {this.state.screenType == "Snapshot" && <Tasks/>}
         <Footer
           setParentState={(name)=>this.setParentState(name)}
         />

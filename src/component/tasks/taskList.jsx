@@ -15,21 +15,21 @@ const TasksItemHeader = styled.div`
 
 class TaskList extends Component {
   render() {
+    const tasks = this.props.tasks
     return (
       <React.Fragment>
         <TasksWrap>
-          <TasksItem>
-            <TasksItemHeader>unknown</TasksItemHeader>
-            <TaskItem/>
-            <TaskItem/>
-          </TasksItem>
-
-          <TasksItem>
-            <TasksItemHeader>unknown</TasksItemHeader>
-            <TaskItem/>
-            <TaskItem/>
-          </TasksItem>
-
+          {tasks.map((task) => (
+            <TasksItem>
+              <TasksItemHeader>unknown</TasksItemHeader>
+              <TaskItem
+                taskName={task.taskName}
+              />
+              <TaskItem
+                taskName={task.taskName}
+              />
+            </TasksItem>
+          ))}
         </TasksWrap>
       </React.Fragment>
     );

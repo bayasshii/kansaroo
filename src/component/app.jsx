@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Header from './header.jsx'
 import Footer from './footer.jsx'
 import Tasks from './tasks/tasks.jsx'
+import Snapshot from './snapshot/snapshot.jsx'
 
 const HeaderWrap = styled.div`
   background-color: #D6EDF2;
@@ -32,7 +33,7 @@ class App extends Component {
           title={this.state.screenType}
         />
         {this.state.screenType == "Tasks" && <Tasks/>}
-        {this.state.screenType == "Snapshot" && <Tasks/>}
+        {this.state.screenType == "Snapshot" && <Snapshot/>}
         <Footer
           setParentState={(name)=>this.setParentState(name)}
         />

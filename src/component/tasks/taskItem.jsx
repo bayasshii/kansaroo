@@ -55,7 +55,7 @@ class TaskItem extends Component {
           <TasksItemCircle onClick={this.handleClick}>
             { this.state.isTaskDone ? <TasksItemCircleDone/>:<TasksItemCircleYet/>}
           </TasksItemCircle>
-          <TasksItemText>Buy PestisideA</TasksItemText>
+          <TasksItemText>{this.props.taskName}</TasksItemText>
           <TasksItemImg/>
         </TasksItemContents>
       </React.Fragment>

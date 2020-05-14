@@ -1,18 +1,12 @@
 import React from 'react';
-import Header from './component/header.jsx'
-import Footer from './component/footer.jsx'
-import Tasks from './component/tasks/tasks.jsx'
+import App from './component/app.jsx'
 
-function App() {
+function AppWrap() {
   return (
     <React.Fragment>
-      <Header
-        title='Tasks'
-      />
-      <Tasks/>
-      <Footer/>
+      <App/>
     </React.Fragment>
   );
 }
 
-export default App;
+export default AppWrap;

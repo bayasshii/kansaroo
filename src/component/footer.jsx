@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 import Tasks from './tasks/tasks.jsx'
 
 const TabsWrap = styled.div`
@@ -12,31 +10,23 @@ const FooterWrap = styled.div`
   bottom: 0;
 `
 
+const FooterTab = styled.div`
+`
+const FooterTabs = styled.div`
+  display: flex;
+`
+
 class Footer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      screenType: "tasks"
-    };
-    // This binding is necessary to make `this` work in the callback
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  //クリックしたら親にステイと渡す
-  handleClick(name) {
-    this.setState(state => ({
-      screenType: name
-    }));
-  }
-
   render() {
+    // const setParentState = this.props.setParentState()
+    //const .setParentState = props;
     return (
       <React.Fragment>
         <FooterWrap>
-          <TabList onClick={this.handleClick}>
-            <Tab>Tasks</Tab>
-            <Tab>Snapshot</Tab>
-          </TabList>
+          <FooterTabs>
+            <FooterTab onClick={()=>this.props.setParentState("tasks")}>Tasks</FooterTab>
+            <FooterTab onClick={()=>this.props.setParentState("snapshot")}>Snapshot</FooterTab>
+          </FooterTabs>
         </FooterWrap>
       </React.Fragment>
     );
